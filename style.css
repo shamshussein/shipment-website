@@ -57,12 +57,11 @@ input, select {
     width: 300px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-right: 10px;
 }
 
 .product-search button {
-    padding: 8px 12px;
-    background-color: #007bff;
+    padding: 8px;
+    background-color: #2b598a;
     color: white;
     border: none;
     border-radius: 4px;
@@ -70,19 +69,26 @@ input, select {
 }
 
 .product-search button:hover {
-    background-color: #0056b3;
+    background-color: #123151;
 }
+
 
 .product-table-container {
     margin-top: 20px;
+    margin-bottom: 20px;
     border: 2px solid rgb(188, 187, 187);
     border-radius: 5px;
-    padding: 10px;
+    padding: 0px 10px 10px 10px;
+   
+}
+.products-row{
+    display: flex;
+    gap: 50px;
 }
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse ;
 }
 
 th, td {
@@ -92,7 +98,7 @@ th, td {
 }
 
 th {
-    background-color: #007bff;
+    background-color: #2b598a;
     color: white;
 }
 
@@ -118,11 +124,16 @@ td button:hover {
 }
 
 #submit-order{
-    background-color: #007bff;
+    background-color: #2b598a;
     color: white;    
     border-radius: 4px;
     border: none;
     padding: 8px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+#submit-order:hover{
+    background-color: #123151;
+    cursor: pointer;
+
 }

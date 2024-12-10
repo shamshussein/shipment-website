@@ -15,7 +15,7 @@
             </div>
             <div>
                 <label for="employee-name">Employee:</label>
-                <input type="text" id="employee-name" class="employee-name" placeholder="TECHlarious" readonly>
+                <input type="text" id="employee-name" class="employee-name" placeholder="Shams" readonly>
             </div>
             <div>
                 <label for="order-date">Order Date:</label>
@@ -67,7 +67,7 @@
     </form>
 
     <div class="product-table-container">
-
+<div class="products-row">
         <div class="product-search">
             <label for="product-dropdown">Select Product:</label>
             <select id="product-dropdown">
@@ -79,30 +79,32 @@
             </select>
             <button type="button" id="add-product">Add Product</button>
         </div>
-
         <div class="product-search">
             <label for="search-product">Search Product:</label>
-            <input type="text" id="search-product" placeholder="Search by product name" />
+            <input type="text" id="search-product" placeholder="Search by product name"/>
             <button type="button" id="search-button">Search</button>
         </div>
-        <table id="product-table">
-            <thead>
-                <tr>
-                    <th>Product Name</th>
-                    <th>Unit Price</th>
-                    <th>Quantity</th>
-                    <th>Discount</th>
-                    <th>Product Category</th>
-                    <th>Product Supplier</th>
-                    <th>Extended Price</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-        </table>
     </div>
+    <table id="product-table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Discount</th>
+                <th>Product Category</th>
+                <th>Product Supplier</th>
+                <th>Extended Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    </div>
+  
+
     <div class="summary-container">
     <h3>Order Summary</h3>
     <label for="customer-name-summary">Customer Name:</label>
@@ -120,9 +122,9 @@
     <label for="ship-via">Ship Via:</label>
     <select id="ship-via">
         <option value="" disabled>Select shipping method</option>
-        <option value="FedEx">FedEx</option>
-        <option value="UPS" selected>UPS</option>
-        <option value="DHL">DHL</option>
+        <option value="UnitedPackage">United Package</option>
+        <option value="LebanesePackage" selected>Lebanese Package</option>
+        <option value="BritishPackage">British Package</option>
     </select>
 
     <button type="button" id="submit-order">Submit Order</button>

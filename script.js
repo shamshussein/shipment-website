@@ -87,6 +87,11 @@ function addProductToTable(productName, unitPrice, productCategory, productSuppl
     const rows = document.querySelectorAll('.product-row');
     const initialPrice = parseFloat(unitPrice.replace('$', '').replace(',', ''));
     const discountInputNumber = 30;
+    const placeholderRow = tableBody.querySelector('.placeholder-row'); 
+
+    if (placeholderRow) {
+        placeholderRow.remove();
+    }
 
     let existingRow = null;
     rows.forEach(row => {
@@ -151,7 +156,12 @@ function addProductToTable(productName, unitPrice, productCategory, productSuppl
         deleteButton.textContent = 'Remove';
         deleteButton.addEventListener('click', function () {
             row.remove();
+            const productRows = tableBody.querySelectorAll('.product-row'); 
+            if (productRows.length === 0) {
+                addPlaceholderRow();
+            }
         });
+        
         actionCell.appendChild(deleteButton);
 
         row.appendChild(productCell);
@@ -172,7 +182,24 @@ function addProductToTable(productName, unitPrice, productCategory, productSuppl
         });
     }
 }
+function addPlaceholderRow() {
+    const tableBody = document.getElementById('product-table').querySelector('tbody');
+    const row = document.createElement('tr');
+    row.classList.add('placeholder-row');
 
+    const cell = document.createElement('td');
+    cell.textContent = 'No orders yet';
+    cell.colSpan = 8;
+    cell.style.textAlign = 'center';
+    cell.style.padding = '50px';
+
+    row.appendChild(cell);
+    tableBody.appendChild(row);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    addPlaceholderRow();
+});
 document.getElementById('search-button').addEventListener('click', function () {
     const searchQuery = document.getElementById('search-product').value.toLowerCase().trim();
     const rows = document.querySelectorAll('.product-row');
