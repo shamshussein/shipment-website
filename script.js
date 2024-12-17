@@ -1,3 +1,22 @@
+window.onload = function() {
+    if (!localStorage.getItem("isSignedUp")) {
+        window.location.replace("/authentication_screen/signup.html"); 
+    }
+    const username = localStorage.getItem("username");
+    if (username) {
+        document.getElementById("customer-name").value = username;
+        document.getElementById("customer-name-summary").value = username;
+        }
+};
+document.getElementById('logout-button').addEventListener('click', function() {
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
+    localStorage.removeItem("isSignedUp");
+
+    window.location.replace("authentication_screen/signup.html");
+});
+
     function updateSummaryRow() {
         const tableBody = document.getElementById('product-table').querySelector('tbody');
         const rows = document.querySelectorAll('.product-row');

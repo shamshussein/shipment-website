@@ -1,0 +1,133 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: url(assets/images/portfolio_bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* linear-gradient(to bottom, #3a7f9d, #2f768e, #2c5364); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    width: 55%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    box-sizing: border-box;
+
+  }
+    
+  .first-slide , .second-slide{
+    flex: 1;
+    padding: 60px 50px 60px 50px;
+    background: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .first-slide{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: linear-gradient(to bottom, #ffcc70 ,orange, #ffcc70);
+  }
+  .second-slide{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  h2 {
+    margin: 10px 0 40px;
+    color: white;
+  }
+    .second-slide h2{
+      color: black;
+      font-size: 18px;
+    }
+  button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .method-btn {
+    gap: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 16px;
+    padding: 15px;
+    border: 1px;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, rgb(117, 107, 88), rgb(60, 52, 35), rgb(50, 38, 17));
+    color: white;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .method-btn i {
+    font-size: 16px; 
+    width: 10%;
+  }
+  
+  .method-btn:hover {
+    background: linear-gradient(to bottom, rgb(117, 107, 88), rgb(60, 52, 35), rgb(241, 167, 30));
+  }
+  
+  .submit-btn {
+    background: #74d23d;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+
+  }
+  
+  .submit-btn:hover {
+    background: #4a951f;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    border: 2px solid rgb(241, 167, 30);
+    padding: 5px 10px;
+    background-color: #fff;
+    margin-right: 10px;
+}
+
+.icon{
+  color: #aaa;
+}
+
+#password-icon{
+cursor: pointer;
+}
+
+.input-field {
+    flex: 1;
+    border: none; 
+    outline: none; 
+    font-size: 16px;
+    padding: 8px; 
+    background-color: transparent;
+}
+
+.input-field::placeholder {
+    color: #bbb;
+  
+}
