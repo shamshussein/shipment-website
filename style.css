@@ -141,3 +141,7 @@ td button:hover {
     cursor: pointer;
 
 }
+.required {
+    color: red;
+    font-weight: bold;
+}

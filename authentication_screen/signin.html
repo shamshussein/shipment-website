@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In Page</title>
+  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="first-slide">
+      <h2>Welcome Back</h2>
+      <button class="method-btn" onclick="signinWithGoogle()">
+        <i class="fab fa-google"></i> Sign in with Google
+      </button>
+      <button class="method-btn" onclick="signinWithFacebook()">
+        <i class="fab fa-facebook-f"></i> Sign in with Facebook
+      </button>
+      <button class="method-btn" onclick="signinWithEmail()">
+        <i class="fas fa-envelope"></i> Sign in with Gmail
+      </button>
+      <p>Don't have an account? <a href="signup.html" class="sign-in-link">Sign Up</a></p>
+
+    </div>
+    <form id="signin-form" class="second-slide">
+      <h2>Sign In to Your Account</h2>
+      <div class="input-container">
+        <input type="email" placeholder="Email" class="input-field" id="signin-email-field" required>
+        <i class="fas fa-envelope icon"></i>
+      </div>
+      <div class="input-container">
+        <input type="password" id="signin-password-field" placeholder="Password" class="input-field" required>
+        <i class="fas fa-lock icon" id="signin-password-icon" onclick="togglePasswordVisibility()"></i>
+      </div>
+      <button class="submit-btn" type="submit">SIGN IN</button>
+    </form>
+  </div>
+  <script src="/authentication_screen/authentication.js"></script>
+</body>
+</html>
