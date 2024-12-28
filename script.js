@@ -90,11 +90,20 @@ document.getElementById('logout-button')?.addEventListener('click', function() {
             addProductToTable(productName, unitPrice, productCategory, productSupplier);
             dropdown.selectedIndex = 0;
     
+            const searchField = document.getElementById('search-product');
+            searchField.value = '';
+    
+            const rows = document.querySelectorAll('.product-row');
+            rows.forEach(row => {
+                row.style.display = ''; 
+            });
+    
             updateSummaryRow();
         } else {
             alert('Please select a product.');
         }
     });
+    
     
 document.getElementById('product-table').addEventListener('input', function (e) {
     if (e.target.type === 'number') {

@@ -31,20 +31,22 @@ function handleSignUp(event) {
         return; 
     }
 
-    users.push({
+    const newUser = {
         username: nameField.value,
         email: emailField.value,
         password: passwordField.value
-    });
+    };
+
+    users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users)); 
-    localStorage.setItem("username", users.username); 
-    localStorage.setItem("email", users.email); 
-    localStorage.setItem("password", users.password); 
+
+    localStorage.setItem("username", newUser.username); 
+    localStorage.setItem("email", newUser.email); 
+    localStorage.setItem("password", newUser.password); 
 
     alert("Sign-up successful! Welcome " + nameField.value);
     window.location.replace("/index.html");
 }
-
 
 function togglePasswordVisibility() {
     const passwordField = document.getElementById('password-field');
