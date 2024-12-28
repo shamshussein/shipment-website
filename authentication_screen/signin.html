@@ -20,7 +20,7 @@
       <button class="method-btn" onclick="signinWithEmail()">
         <i class="fas fa-envelope"></i> Sign in with Gmail
       </button>
-      <p>Don't have an account? <a href="signup.html" class="sign-in-link">Sign Up</a></p>
+      <p>Don't have an account? <a href="signup.html" class="sign-link">Sign Up</a></p>
 
     </div>
     <form id="signin-form" class="second-slide">
@@ -31,11 +31,11 @@
       </div>
       <div class="input-container">
         <input type="password" id="signin-password-field" placeholder="Password" class="input-field" required>
-        <i class="fas fa-lock icon" id="signin-password-icon" onclick="togglePasswordVisibility()"></i>
+        <i class="fas fa-lock icon" id="signin-password-icon" onclick="toggleSigninPasswordVisibility()"></i>
       </div>
       <button class="submit-btn" type="submit">SIGN IN</button>
     </form>
   </div>
-  <script src="/authentication_screen/authentication.js"></script>
+  <script src="/authentication_screen/signin.js"></script>
 </body>
 </html>

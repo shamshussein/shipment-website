@@ -7,12 +7,12 @@ function handleSignUp(event) {
     const passwordField = document.getElementById('password-field');
     const nameField = document.getElementById('username-field');
 
-    const storedEmail = localStorage.getItem("email"); 
-    const storedUsername = localStorage.getItem("username"); 
+    const users = JSON.parse(localStorage.getItem("users")) || []; 
 
-    if (emailField.value === storedEmail || nameField.value === storedUsername) {
+    const userExists = users.some(user => user.email === emailField.value || user.username === nameField.value);
+    if (userExists) {
         alert("An account already exists with this email or username. Please Sign In.");
-        window.location.href = "signin.html";  
+        window.location.href = "signin.html";
         return;
     }
 
@@ -31,39 +31,21 @@ function handleSignUp(event) {
         return; 
     }
 
-    localStorage.setItem("username", nameField.value);
-    localStorage.setItem("email", emailField.value);
-    localStorage.setItem("password", passwordField.value);
+    users.push({
+        username: nameField.value,
+        email: emailField.value,
+        password: passwordField.value
+    });
+    localStorage.setItem("users", JSON.stringify(users)); 
+    localStorage.setItem("username", users.username); 
+    localStorage.setItem("email", users.email); 
+    localStorage.setItem("password", users.password); 
 
     alert("Sign-up successful! Welcome " + nameField.value);
-
-    console.log("Redirecting to index.html...");
-    window.location.replace = "index.html";  
+    window.location.replace("/index.html");
 }
 
-document.getElementById('signin-form').addEventListener('submit', handleSignIn);
 
-function handleSignIn(event) {
-    event.preventDefault();
-
-    const emailField = document.getElementById('signin-email-field');
-    const passwordField = document.getElementById('signin-password-field');
-
-    if (!emailField.value || !passwordField.value) {
-        alert("Please fill in both fields before proceeding.");
-        return;
-    }
-
-    const storedEmail = localStorage.getItem("email");
-    const storedPassword = localStorage.getItem("password");
-
-    if (emailField.value === storedEmail && passwordField.value === storedPassword) {
-        alert("Sign-in successful! Welcome back.");
-    window.location.replace = "index.html";  
-    } else {
-        alert("Invalid email or password. Please try again.");
-    }
-}
 function togglePasswordVisibility() {
     const passwordField = document.getElementById('password-field');
     const passwordIcon = document.getElementById('password-icon');

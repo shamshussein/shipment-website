@@ -1,21 +1,33 @@
-window.onload = function() {
-    if (!localStorage.getItem("isSignedUp")) {
-        window.location.replace("/authentication_screen/signup.html"); 
-    }
+window.onload = function () {
+    const email = localStorage.getItem("email");
     const username = localStorage.getItem("username");
-    if (username) {
-        document.getElementById("customer-name").value = username;
-        document.getElementById("customer-name-summary").value = username;
-        }
-};
-document.getElementById('logout-button').addEventListener('click', function() {
-    localStorage.removeItem("username");
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
-    localStorage.removeItem("isSignedUp");
 
-    window.location.replace("authentication_screen/signup.html");
+    if (!email || !username) {
+        window.location.replace("/authentication_screen/signup.html");
+        return;
+    }
+
+
+    const customerNameField = document.getElementById("customer-name");
+    const customerNameSummaryField = document.getElementById("customer-name-summary");
+
+    if (customerNameField) {
+        customerNameField.value = username;
+    }
+
+    if (customerNameSummaryField) {
+        customerNameSummaryField.value = username;
+    }
+};
+
+
+document.getElementById('logout-button')?.addEventListener('click', function() {
+    localStorage.removeItem("username");
+
+    alert("You have been logged out.");
+    window.location.replace("/authentication_screen/signup.html");
 });
+
 
     function updateSummaryRow() {
         const tableBody = document.getElementById('product-table').querySelector('tbody');
